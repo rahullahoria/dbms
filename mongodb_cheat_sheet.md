@@ -259,3 +259,44 @@ db.posts.find({ views: { $gte: 7 } })
 db.posts.find({ views: { $lt: 7 } })
 db.posts.find({ views: { $lte: 7 } })
 ```
+
+## Aggregate 
+
+```
+db.posts.aggregate([{$group : {_id : "$author", totle_views : {$sum : 1}}}])
+```
+
+# DB Operations
+
+## backup
+
+```
+$ mongodump
+```
+
+
+Syntax	Description	Example
+```
+mongodump --host HOST_NAME --port PORT_NUMBER 
+
+mongodump --dbpath DB_PATH --out BACKUP_DIRECTORY
+
+mongodump --collection COLLECTION --db DB_NAME
+```
+
+## Restore
+
+```
+$ mongorestore
+```
+
+## Mongodb Stat (status of all running mongod instances and return counters of database operations)
+
+```
+$ mongostat
+```
+
+## Mongodb Top (reports the read and write activity of MongoDB)
+```
+$ mongotop
+```
